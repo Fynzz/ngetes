@@ -122,7 +122,7 @@
   background-size: 0.5vmin 0.5vmin;
   background-repeat: no-repeat;
   animation: firework 1s infinite;
-  animation-delay: 14s;
+  animation-delay: 10s;
 }
 
 @keyframes firework {
@@ -174,7 +174,7 @@
   background-repeat: no-repeat;
   opacity: 0;
   animation: firework 1s infinite;
-  animation-delay: 14s;
+  animation-delay: 10s;
 }
 
 .firework::before {
@@ -211,8 +211,8 @@
         }
       }
 .buttons {
-  display: flex;
   gap: 20px; 
+  display: none;
   margin-top: 20px; 
 }
 
@@ -231,6 +231,7 @@
   transform: scale(1.05);
   background-color: #CE8E8E; 
 }
+        
     </style>
   </head>
   <body>
@@ -241,17 +242,9 @@
         <h1 class="two">2</h1>
         <h1 class="one">1</h1>
       </div>
-      <div class="loader">
-        <div class="fill"></div>
+      <div class="buttons">
+          <button class="btn" onclick="location.href='Halaman1.html'">Click Here</button>
       </div>
-    </div>
-
-    <div class="birthday">
-      <h1 class="greeting">Happy Birthday</h1>
-      <h1 class="year"></h1>
- <div class="buttons">
-    <button class="btn" onclick="location.href='Halaman1.html'">Click Here</button>
-  </div>
       <div class="firework"></div>
       <div class="firework"></div>
       <div class="firework"></div>
@@ -320,48 +313,15 @@ window.onload = () => {
       duration: 0.5,
       delay: 9.5
     });
-  
-    gsap.to(".loader", {
-      opacity: 0,
-      display: "none",
-      duration: 0.5,
-      delay: 10
+
+    gsap.to(".buttons", {
+        opacity: 1,
+        display: "block",
+        duration: 0.5,
+        delay: 10
     });
   
-    gsap.to(".front", {
-      left: "-100%",
-      duration: 1.2,
-      delay: 10.5,
-      ease: "power2.inOut"
-    });
-  
-    gsap.to(".front-shadow", {
-      left: "-100%",
-      duration: 0.8,
-      delay: 10.5,
-      ease: "power2.inOut"
-    });
-  
-    gsap.to(".birthday", {
-      left: "0",
-      duration: 1,
-      delay: 10.7,
-      ease: "power2.inOut"
-    });
-  
-    gsap.to("h1.greeting", {
-      marginLeft: "0",
-      duration: 1.5,
-      delay: 11.3,
-      ease: "power2.inOut"
-    });
-  
-    gsap.to("h1.year", {
-      marginTop: "0",
-      duration: 2.5,
-      delay: 12,
-      ease: "power2.inOut"
-    });
+   
   
     const fireworks1 = document.querySelectorAll(".firework")[0];
     const fireworks2 = document.querySelectorAll(".firework")[1];
